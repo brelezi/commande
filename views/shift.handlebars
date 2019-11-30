@@ -1,0 +1,90 @@
+
+<div class="container">
+  <h1>Shift</h1>
+
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">MacCheese/Oreo</th>
+      <th scope="col">MacCheese/Speculos</th>
+      <th scope="col">MacCheese/Mais</th>
+      <th scope="col">Riz/Oreo</th>
+      <th scope="col">Riz/Speculos</th>
+      <th scope="col">Riz/Mais</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Servi</th>
+    </tr>
+  </thead>
+  <tbody>
+
+{{#each menus}}
+  <h2 id="legende">Commandes en cours</h2>
+
+  <!-- <div id="{{_id}}" class="card card-body mb-2">
+    <h4>{{_id}}</h4>
+    <h3>{{number}}</h3>
+    <h3>Mac and Cheese Oreo {{mco}}</h3>
+    <h3>Mac and Cheese Speculos {{mcs}}</h3>
+    <h3>Mac and Cheese Mais {{mcm}}</h3>
+    <h3>Riz Oreo {{ro}}</h3>
+    <h3>Riz Speculos{{rs}}</h3>
+    <h3>Riz Mais{{rm}}</h3>
+    <a class="btn btn-dark btn-block mb-2" href="/commande/{{id}}">Edit</a>
+    <form method="post" action="/commande/{{number}}?_method=DELETE" >
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block"  value="Delete">
+    </form>
+
+  </div> -->
+
+
+
+
+    <tr>
+      <th scope="row">1</th>
+      <!-- <td>{{__id}}</td> -->
+      <td>{{mco}}</td>
+      <td>{{mcs}}</td>
+      <td>{{mcm}}</td>
+      <td>{{ro}}</td>
+      <td>{{rs}}</td>
+      <td>{{rm}}</td>
+      <td>
+        <a class="btn btn-dark btn-block mb-2" href="/commande/{{id}}">Edit</a>
+
+      </td>
+      <td>
+
+        <form method="post" action="/commande/{{number}}?_method=DELETE" >
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" class="btn btn-danger btn-block"  value="Delete">
+        </form>
+
+      </td>
+    </tr>
+    <!-- <a class="btn btn-dark btn-block mb-2" href="/commande/{{id}}">Edit</a> -->
+    <!-- <form method="post" action="/commande/{{number}}?_method=DELETE" >
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block"  value="Delete">
+    </form> -->
+
+
+
+    {{else}}
+
+    {{/each}}
+
+  </tbody>
+</table>
+
+
+  <h2>Commandes conclues</h2>
+  <a id="refresh" class="btn btn-primary btn-block mb-2" >Cuisine</a>
+  <a class="btn btn-primary" href="/menu" role="button">Nouvelle commande</a>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
